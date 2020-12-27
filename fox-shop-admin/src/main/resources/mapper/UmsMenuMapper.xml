@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fh.menu.mapper.UmsMenuMapper">
+
+    <!--查询动态菜单-->
+    <select id="queryMenuTreeList" parameterType="java.lang.String" resultType="com.fh.menu.entity.UmsMenu">
+        SELECT DISTINCT m.icon,m.`name`,m.title,m.id,m.parent_id FROM ums_role_menu_relation rm
+        LEFT JOIN ums_admin_role_relation ar ON rm.role_id=ar.role_id
+        LEFT JOIN ums_menu m ON rm.menu_id=m.id
+        LEFT JOIN ums_admin a ON ar.admin_id=a.id
+        WHERE a.username=#{username}
+    </select>
+
+</mapper>
