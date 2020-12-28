@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: "000"
-    url: jdbc:mysql://192.168.136.130:3306/fox_shop?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://169.254.228.66:3306/fox_shop?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
   servlet:
     multipart:
       enabled: true #是否启用http上传处理
